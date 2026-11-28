@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tienda-api
-  labels:
-    app: tienda-api
 spec:
   replicas: 1
   selector:
@@ -15,8 +13,8 @@ spec:
         app: tienda-api
     spec:
       containers:
-        - name: tienda-api
-          image: tienda-api:1.0
+        - name: tienda
+          image: tienda-api:1.1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
